@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Muli);
+
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 20px;
+      padding: 0;
+      font-family: "Muli";
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .text {
+      display: inline-block;
+      vertical-align: top;
+      line-height: 20px;
+    }
+
+    .visible {
+      height: 20px;
+      overflow: hidden;
+      text-align: left;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .visible__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      -webkit-animation-name: change;
+      -webkit-animation-duration: 12s;
+      -webkit-animation-iteration-count: infinite;
+      -o-animation-name: change;
+      -o-animation-duration: 12s;
+      -o-animation-iteration-count: infinite;
+      -moz-animation-name: change;
+      -moz-animation-duration: 12s;
+      -moz-animation-iteration-count: infinite;
+      animation-name: change;
+      animation-duration: 12s;
+      animation-iteration-count: infinite;
+    }
+
+    .visible__list__item {
+      margin: 0;
+      line-height: 20px;
+      color: #bd4a4a;
+    }
+
+    @-webkit-keyframes change {
+
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      9.5% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      12.5% {
+        transform: translate3d(0, -20px, 0);
+      }
+
+      22% {
+        transform: translate3d(0, -20px, 0);
+      }
+
+      25% {
+        transform: translate3d(0, -40px, 0);
+      }
+
+      34.5% {
+        transform: translate3d(0, -40px, 0);
+      }
+
+      37.5% {
+        transform: translate3d(0, -60px, 0);
+      }
+
+      47% {
+        transform: translate3d(0, -60px, 0);
+      }
+
+      50% {
+        transform: translate3d(0, -80px, 0);
+      }
+
+      59.5% {
+        transform: translate3d(0, -80px, 0);
+      }
+
+      62.5% {
+        transform: translate3d(0, -60px, 0);
+      }
+
+      72% {
+        transform: translate3d(0, -60px, 0);
+      }
+
+      75% {
+        transform: translate3d(0, -40px, 0);
+      }
+
+      84.5% {
+        transform: translate3d(0, -40px, 0);
+      }
+
+      87.5% {
+        transform: translate3d(0, -20px, 0);
+      }
+
+      97% {
+        transform: translate3d(0, -20px, 0);
+      }
+    }
+
+    @-o-keyframes change {
+
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      9.5% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      12.5% {
+        transform: translate3d(0, -20px, 0);
+      }
+
+      22% {
+        transform: translate3d(0, -20px, 0);
+      }
+
+      25% {
+        transform: translate3d(0, -40px, 0);
+      }
+
+      34.5% {
+        transform: translate3d(0, -40px, 0);
+      }
+
+      37.5% {
+        transform: translate3d(0, -60px, 0);
+      }
+
+      47% {
+        transform: translate3d(0, -60px, 0);
+      }
+
+      50% {
+        transform: translate3d(0, -80px, 0);
+      }
+
+      59.5% {
+        transform: translate3d(0, -80px, 0);
+      }
+
+      62.5% {
+        transform: translate3d(0, -60px, 0);
+      }
+
+      72% {
+        transform: translate3d(0, -60px, 0);
+      }
+
+      75% {
+        transform: translate3d(0, -40px, 0);
+      }
+
+      84.5% {
+        transform: translate3d(0, -40px, 0);
+      }
+
+      87.5% {
+        transform: translate3d(0, -20px, 0);
+      }
+
+      97% {
+        transform: translate3d(0, -20px, 0);
+      }
+    }
+
+    @-moz-keyframes change {
+
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      9.5% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      12.5% {
+        transform: translate3d(0, -20px, 0);
+      }
+
+      22% {
+        transform: translate3d(0, -20px, 0);
+      }
+
+      25% {
+        transform: translate3d(0, -40px, 0);
+      }
+
+      34.5% {
+        transform: translate3d(0, -40px, 0);
+      }
+
+      37.5% {
+        transform: translate3d(0, -60px, 0);
+      }
+
+      47% {
+        transform: translate3d(0, -60px, 0);
+      }
+
+      50% {
+        transform: translate3d(0, -80px, 0);
+      }
+
+      59.5% {
+        transform: translate3d(0, -80px, 0);
+      }
+
+      62.5% {
+        transform: translate3d(0, -60px, 0);
+      }
+
+      72% {
+        transform: translate3d(0, -60px, 0);
+      }
+
+      75% {
+        transform: translate3d(0, -40px, 0);
+      }
+
+      84.5% {
+        transform: translate3d(0, -40px, 0);
+      }
+
+      87.5% {
+        transform: translate3d(0, -20px, 0);
+      }
+
+      97% {
+        transform: translate3d(0, -20px, 0);
+      }
+    }
+
+    @keyframes change {
+
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      9.5% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      12.5% {
+        transform: translate3d(0, -20px, 0);
+      }
+
+      22% {
+        transform: translate3d(0, -20px, 0);
+      }
+
+      25% {
+        transform: translate3d(0, -40px, 0);
+      }
+
+      34.5% {
+        transform: translate3d(0, -40px, 0);
+      }
+
+      37.5% {
+        transform: translate3d(0, -60px, 0);
+      }
+
+      47% {
+        transform: translate3d(0, -60px, 0);
+      }
+
+      50% {
+        transform: translate3d(0, -80px, 0);
+      }
+
+      59.5% {
+        transform: translate3d(0, -80px, 0);
+      }
+
+      62.5% {
+        transform: translate3d(0, -60px, 0);
+      }
+
+      72% {
+        transform: translate3d(0, -60px, 0);
+      }
+
+      75% {
+        transform: translate3d(0, -40px, 0);
+      }
+
+      84.5% {
+        transform: translate3d(0, -40px, 0);
+      }
+
+      87.5% {
+        transform: translate3d(0, -20px, 0);
+      }
+
+      97% {
+        transform: translate3d(0, -20px, 0);
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+
+  <div>
+    <span class="text">We are</span>
+
+    <div class="visible">
+      <ul class="visible__list">
+        <li class="visible__list__item">a creative team.</li>
+        <li class="visible__list__item">directors.</li>
+        <li class="visible__list__item">product designers.</li>
+        <li class="visible__list__item">stage designers.</li>
+        <li class="visible__list__item">photographers.</li>
+      </ul>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

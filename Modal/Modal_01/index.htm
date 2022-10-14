@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal Window - Coding Journey</title>
+  <link rel="stylesheet" href="modal.css">
+  <script src="modal.js" defer></script>
+
+
+  <style>
+    /* Generic code which does need to be copied */
+
+    @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #eee;
+      color: #111;
+      height: 200vh;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <button data-modal-target="modal1">Show Modal 1</button>
+  <!-- modal triggering buttons selection by "data-modal-target" attribute. Alternatively, we could define a class e.g. "modal-trigger" -->
+  <button data-modal-target="modal2">Show Modal 2</button>
+  <button data-modal-target="modal3">Show Modal 3</button>
+
+
+
+
+  <div class="modal" id="modal1">
+    <!-- This is the background overlay -->
+    <div class="modal-content">
+      <!-- This is the actual modal/popup box -->
+      <span class="modal-close">&times;</span>
+      <h1>Modal Title 1</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, quod. Laborum aliquam suscipit itaque
+        corporis.
+      </p>
+      <p>Soluta ipsum inventore aspernatur nostrum qui laudantium necessitatibus cupiditate reprehenderit possimus vitae
+        eveniet aperiam, ex, laborum deleniti modi nesciunt iure voluptas! Enim omnis maxime temporibus?</p>
+      <p>Excepturi aperiam quam ducimus cum reiciendis possimus, deserunt mollitia ea similique nisi eveniet repellat
+        impedit.</p>
+    </div>
+  </div>
+
+
+  <div class="modal" id="modal2">
+    <!-- This is the background overlay -->
+    <div class="modal-content">
+      <!-- This is the actual modal/popup box -->
+      <span class="modal-close">&times;</span>
+      <h1>Modal Title 2</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, quod. Laborum aliquam suscipit itaque
+        corporis.
+      </p>
+      <p>Soluta ipsum inventore aspernatur nostrum qui laudantium necessitatibus cupiditate reprehenderit possimus vitae
+        eveniet aperiam, ex, laborum deleniti modi nesciunt iure voluptas! Enim omnis maxime temporibus?</p>
+      <p>Excepturi aperiam quam ducimus cum reiciendis possimus, deserunt mollitia ea similique nisi eveniet repellat
+        impedit.</p>
+    </div>
+  </div>
+
+
+  <div class="modal" id="modal3">
+    <!-- This is the background overlay -->
+    <div class="modal-content">
+      <!-- This is the actual modal/popup box -->
+      <span class="modal-close">&times;</span>
+      <h1>Modal Title 3</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, quod. Laborum aliquam suscipit itaque
+        corporis.
+      </p>
+      <p>Soluta ipsum inventore aspernatur nostrum qui laudantium necessitatibus cupiditate reprehenderit possimus vitae
+        eveniet aperiam, ex, laborum deleniti modi nesciunt iure voluptas! Enim omnis maxime temporibus?</p>
+      <p>Excepturi aperiam quam ducimus cum reiciendis possimus, deserunt mollitia ea similique nisi eveniet repellat
+        impedit.</p>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <title>Document</title>
+
+  <style>
+    @import url(http://weloveiconfonts.com/api/?family=entypo);
+
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: 'Lato';
+      letter-spacing: 1px;
+      color: #838383;
+      background-color: #F7F5F2;
+    }
+
+    h1 {
+      color: #BF5050;
+    }
+
+    section {
+      display: flex;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+    }
+
+    .larg {
+      flex: 1;
+      -webkit-flex: 1;
+      -moz-flex: 1;
+      -ms-flex: 1;
+      padding: 15px;
+    }
+
+    .flap {
+      width: 270px;
+      padding: 15px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+
+      & h1 {
+        margin: 5px 0 0 0;
+      }
+
+      & .list span {
+        color: #ecf0f1;
+        display: block;
+        line-height: 24px;
+        margin: 5px 0;
+        cursor: pointer;
+        transition: all .6s;
+        font-size: 20px;
+        border-bottom: 1px solid #f8f8f8;
+        line-height: 45px;
+
+        &:hover {
+          color: #bdc3c7;
+        }
+      }
+
+      & p {
+        color: #fff;
+        font-style: italic;
+      }
+    }
+
+    dl dt {
+      cursor: pointer;
+      line-height: 25px;
+      margin: 12px auto;
+      background-color: #EAE6E1;
+      padding: 10px;
+      border-radius: 5px;
+      transition: all .6s;
+
+      &:hover {
+        color: #fbfbfb;
+        background-color: #ACACAC;
+      }
+
+      &:active {
+        background-color: #888;
+      }
+    }
+
+    [class*="entypo-"] {
+      font-family: 'entypo', sans-serif;
+      cursor: pointer;
+      font-size: 25px;
+      color: #F9F9F9;
+      text-shadow: 1px 1px 1px #7A7A7A;
+      opacity: 0.8;
+    }
+
+    .icons {
+      height: 28px;
+    }
+
+    .entypo-cancel-circled {
+      float: right;
+    }
+
+    .entypo-book-open {
+      float: left;
+    }
+
+    .entypo-cancel-circled:hover,
+    .entypo-book-open:hover {
+      opacity: 1;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <!--Content from wikipedia-->
+  <section>
+    <div class="larg">
+      <h1>Dictionary - Nice effect</h1>
+      <dl>
+        <dt
+          data-dfn="HyperText Markup Language (HTML) is the main markup language for creating web pages and other information that can be displayed in a web browser.">
+          HTML</dt>
+        <dt
+          data-dfn="Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation semantics (the look and formatting) of a document written in a markup language">
+          CSS</dt>
+        <dt
+          data-dfn="JavaScript (JS) is an interpreted computer programming language.[5] As part of web browsers, implementations allow client-side scripts to interact with the user, control the browser, communicate asynchronously, and alter the document content that is displayed.">
+          Javascript</dt>
+        <dt
+          data-dfn="jQuery is a multi-browser JavaScript library designed to simplify the client-side scripting of HTML. It was released in January 2006 at BarCamp NYC by John Resig. It is currently developed by a team of developers led by Dave Methvin. Used by over 65% of the 10,000 most visited websites, jQuery is the most popular JavaScript library in use today.">
+          Jquery</dt>
+        <dt
+          data-dfn="PHP is a server-side scripting language designed for web development but also used as a general-purpose programming language.">
+          Php</dt>
+        <dt
+          data-dfn="Java is a computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible.">
+          Java</dt>
+      </dl>
+    </div>
+    <div class="flap">
+    </div>
+  </section>
+
+
+
+  <script>
+
+    $(document).ready(function () {
+      var header = "<div class='icons'><span class='entypo-cancel-circled close'></span><span class='entypo-book-open open'></span></div>";
+      var margFlap = parseInt($('.flap').css('width')) + parseInt($('.flap').css('padding-right')) + parseInt($('.flap').css('padding-left'));
+      var margLarg = $('.larg').width();
+      $('.larg').css('max-width', margLarg);
+      $('.flap').css({
+        'height': $(window).height(),
+        'margin-right': -margFlap
+      });
+
+      var i = 1;
+      var color = 0;
+      function countColor() {
+        console.log(i);
+        color = (i % 2 == 0) ? '#303030' : '#3d3d3d';
+        i++;
+      };
+
+      $('body').on('click', 'dl dt', function () {
+        countColor();
+        $('.larg').animate({
+          'max-width': margLarg - margFlap
+        }, 600);
+        var word = $(this).html();
+        var dfn = $(this).data('dfn');
+        var html = header + "<br class='clear' />";
+        html += "<h1>" + word + "</h1>";
+        html += '<p>' + dfn + '</p>';
+
+        if (i != 1) {
+          $('.flap').eq(0).after(
+            "<div class='flap' style='margin-right:" + (-margFlap) + "px; background-color:" + color + ";'></div>"
+          );
+          $('.flap').eq(1).html(html).animate({
+            'margin-right': 0
+          }, 600, function () {
+            $('.flap').eq(0).remove();
+            $('.icons').animate({
+              top: 0
+            }, 700);
+          });
+        }
+        else {
+          $('.flap').html(html).animate({
+            'margin-right': 0
+          }, 600);
+        }
+      });
+
+      $('body').on('click', '.close', function () {
+        countColor();
+        $('.flap').animate({
+          'margin-right': -margFlap
+        }, 600);
+      });
+
+      $('body').on('click', '.open', function () {
+        countColor();
+        var count = $('dl dt').length;
+
+        var html = "<div class='flap' style='margin-right:" + (-margFlap) + "px; background-color:" + color + "';>";
+        html += header + "<div class='list'><h1>List of words</h1>";
+        for (i = 0; i < count; i++) {
+          var word = $('dl dt').eq(i).html();
+          var dfn = $('dl dt').eq(i).data('dfn');
+          html += "<span data-dfn='" + dfn + "'>" + word + "</span>";
+        }
+        html += "</div></div>";
+        $('.flap').eq(0).after(html);
+
+        $('.flap').eq(1).animate({
+          'margin-right': 0
+        }, 600, function () {
+          $('.flap').eq(0).remove();
+        });
+      });
+
+      $('body').on('click', '.list span', function () {
+        countColor();
+        var word = $(this).html();
+        var dfn = $(this).data('dfn');
+
+        var html = header + "<br class='clear' />";
+        html += "<h1>" + word + "</h1>";
+        html += '<p>' + dfn + '</p>';
+
+        $('.flap').eq(0).after(
+          "<div class='flap' style='margin-right:" + (-margFlap) + "px; background-color:" + color + ";'></div>"
+        );
+        $('.flap').eq(1).html(html).animate({
+          'margin-right': 0
+        }, 600, function () {
+          $('.flap').eq(0).remove();
+          $('.icons').animate({
+            top: 0
+          }, 700);
+        });
+      });
+    });
+
+
+  </script>
+
+</body>
+
+</html>
